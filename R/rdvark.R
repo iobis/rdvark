@@ -4,5 +4,5 @@
 #'
 #' @docType package
 #' @name rdvark
-#' @import dplyr yaml
+#' @import dplyr
 NULL

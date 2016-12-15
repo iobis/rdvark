@@ -23,6 +23,7 @@ validate <- function(data, config) {
           errors <- rbind(errors, allowed_errors)
         } else {
           # todo: conditional tests
+          # https://github.com/inbo/data-validator/blob/master/examples/inboveg/dwc-measurementorfact.yaml
         }
 
       }
@@ -55,6 +56,7 @@ validate_any <- function(values, test, criteria, ids) {
 #' @param ids Vector of ids
 #' @return Errors data frame
 #' @keywords internal
+#' @export
 validate_allowed <- function(values, allowed, ids) {
   errors <- NULL
 
@@ -74,6 +76,7 @@ validate_allowed <- function(values, allowed, ids) {
 #' @param ids Vector of ids
 #' @return Errors data frame
 #' @keywords internal
+#' @export
 validate_type <- function(values, type, ids) {
   errors <- NULL
 

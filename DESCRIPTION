@@ -7,8 +7,7 @@ Remotes: ropensci/finch
 Depends:
     R (>= 3.2.2)
 Imports:
-    dplyr,
-    yaml
+    dplyr
 Suggests:
     testthat,
     finch

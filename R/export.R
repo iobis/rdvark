@@ -1,17 +1,4 @@
-library(rdvark)
-library(finch)
-library(yaml)
-
-# Broedvogel dataset, tests "allowed"
-
-archive <- dwca_read("broedvogel_data.zip", read = TRUE)
-data <- archive$data$occurrence.txt
-config <- yaml.load_file("broedvogel_settings.yaml")
-errors <- validate(data, config)
-expect_equal(nrow(errors), 7)
-
-# conditional tests:
-# https://github.com/inbo/data-validator/blob/master/examples/inboveg/dwc-measurementorfact.yaml
+# todo: export flat errors table to JSON
 
 # expected output:
 #{u'INBO:BROEDVOGELATLAS:AH:00000368:00070': {'language': ['unallowed value e'],
