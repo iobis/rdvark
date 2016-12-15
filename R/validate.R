@@ -86,7 +86,14 @@ validate_type <- function(values, type, ids) {
         errors <- rbind(errors, data.frame(id = ids[i], message = paste0(values[i], " is not an integer")))
       }
     }
+  } else if (type == "url") {
+    for (i in 1:length(values)) {
+      if (!grepl("^(http|https|ftp)://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$", as.character(values[i]))) {
+        errors <- rbind(errors, data.frame(id = ids[i], message = paste0(values[i], " is not a url")))
+      }
+    }
   }
+
 
   return(errors);
 }
